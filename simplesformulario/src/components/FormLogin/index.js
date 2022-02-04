@@ -105,11 +105,23 @@ export const Formulario = () => {
               />
             </div>
             {
-              !habilitarBotao &&
+              !habilitarBotao && 
+              mensagem1 &&
               <div className='w3-left-align'>
                 <p className='w3-text-red'>
                   <span className='w3-text-red'>
                     Senha inválida:
+                  </span>
+                  <br />
+                </p>
+              </div>
+            }
+            {
+              habilitarBotao &&
+              <div className='w3-left-align'>
+                <p className='w3-text-green'>
+                  <span className='w3-text-green'>
+                    Senha válida:
                   </span>
                   <br />
                 </p>
