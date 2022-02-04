@@ -3,11 +3,11 @@
 Esse é um simples formulario de validação de senha para quatro casos especificos
 foi aplicado destruturação de string em array para aplicação de estrutura de dados para verificação de predecessores e sucessores
 alem de ordem crecente e decrecente, restrição de numero maximo e minimo e verificação de tamanho de array.
-# instalar dependencias
+# Instalar dependencias
 
 yarn install ou npm install
 
-## rodar em dev
+## Rodar em dev
 
 Abra o diretorio do projeto no terminal e rode:
 
