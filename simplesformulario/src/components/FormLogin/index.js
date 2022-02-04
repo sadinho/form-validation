@@ -110,7 +110,7 @@ export const Formulario = () => {
               <div className='w3-left-align'>
                 <p className='w3-text-red'>
                   <span className='w3-text-red'>
-                    Senha inválida:
+                    Senha inválida
                   </span>
                   <br />
                 </p>
@@ -121,7 +121,7 @@ export const Formulario = () => {
               <div className='w3-left-align'>
                 <p className='w3-text-green'>
                   <span className='w3-text-green'>
-                    Senha válida:
+                    Senha válida!
                   </span>
                   <br />
                 </p>
