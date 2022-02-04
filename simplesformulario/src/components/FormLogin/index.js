@@ -65,33 +65,35 @@ export const Formulario = () => {
           <header className='w3-left-align w3-margin-left'>
             <h1>Valide sua senha</h1>
           </header>
-          <form class="w3-container" onSubmit={handleSubmit}>
-            <div className="w3-left-align" controlId="formBasicName">
-              <label for='name' >Nome</label>
+          <form className="w3-container" onSubmit={handleSubmit}>
+            <div className="w3-left-align" id="formBasicName">
+              <label htmlFor='name' >Nome</label>
               <input
                 id='name'
-                class="w3-input w3-border w3-round"
+                className="w3-input w3-border w3-round"
                 type="text"
                 placeholder="Digite seu nome"
                 onChange={(evt) => setName(evt.target.value)}
                 disabled={isLoading}
+                required
               />
             </div>
 
-            <div className='w3-left-align' controlId="formBasicEmail">
-              <label form='email'>Email</label>
+            <div className='w3-left-align' id="formBasicEmail">
+              <label htmlFor='email'>Email</label>
               <input
                 id='email'
-                class="w3-input w3-border w3-round"
+                className="w3-input w3-border w3-round"
                 type="email"
                 placeholder="Digite seu email"
                 onChange={(evt) => setEmail(evt.target.value)}
                 disabled={isLoading}
+                required
               />
             </div>
 
-            <div className='w3-left-align' controlId="formBasicPassword">
-              <label for='senha' className="senha">Senha</label>
+            <div className='w3-left-align' id="formBasicPassword">
+              <label htmlFor='senha' className="senha">Senha</label>
               <input
                 id='senha'
                 onKeyUp={validation}
@@ -140,7 +142,7 @@ export const Formulario = () => {
             }
 
 
-            <div className='w3-right-align w3-col flex-container w3-margin-top'>
+            <div className='w3-right-align w3-margin-top'>
               {
                 msgSucess && <ul className='w3-col l9 m9 s9'>
                   <li className={msgSucess.classColor}>{msgSucess.msg}</li>
@@ -156,8 +158,6 @@ export const Formulario = () => {
                 w3-border
                 w3-border-black
                 w3-text-dark-grey
-                w3-text-bold
-                w3-col l2 m2 s2
                 w3-margin-left'
                   type="submit"
                 >
