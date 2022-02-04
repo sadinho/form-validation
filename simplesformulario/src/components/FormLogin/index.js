@@ -154,7 +154,30 @@ export const Formulario = () => {
             }
 
 
-            <div className='w3-right-align w3-margin-top'>
+            <div className='w3-right-align w3-margin-top w3-hide-medium w3-hide-large'>
+              {
+                msgSucess && <ul>
+                  <li className={msgSucess.classColor}>{msgSucess.msg}</li>
+                </ul>
+              }
+
+              <button className='
+                w3-button
+                w3-gray
+                w3-round
+                w3-border
+                w3-border-black
+                w3-text-dark-grey
+                w3-col
+                w3-display-bottommiddle'
+                type="submit"
+                disabled={!habilitarBotao || isLoading}
+              >
+                Enviar
+              </button>
+
+            </div>
+            <div className='w3-right-align w3-margin-top w3-hide-small'>
               {
                 msgSucess && <ul className='w3-col l9 m9 s9'>
                   <li className={msgSucess.classColor}>{msgSucess.msg}</li>
@@ -170,7 +193,7 @@ export const Formulario = () => {
                 w3-text-dark-grey
                 w3-margin-left'
                 type="submit"
-                disabled={!habilitarBotao}
+                disabled={!habilitarBotao || isLoading}
               >
                 Enviar
               </button>
