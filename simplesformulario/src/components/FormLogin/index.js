@@ -62,96 +62,95 @@ export const Formulario = () => {
     <div className='w3-col m12 l12 s12 App-padding-left-right'>
       <div className="w3-row">
         <div className="w3-col">
-          <header className='w3-left-align w3-margin-left'>
-            <h1>Valide sua senha</h1>
+          <header className='w3-left-align w3-margin-left w3-margin'>
+            <h1 className='w3-left-align w3-margin'>Valide sua senha</h1>
           </header>
           <form className="w3-container" onSubmit={handleSubmit}>
-            <div className="w3-left-align" id="formBasicName">
-              <label htmlFor='name' >Nome</label>
+            <div className="w3-left-align w3-margin" id="formBasicName">
               <input
                 id='name'
                 className="w3-input w3-border w3-round"
                 type="text"
-                placeholder="Digite seu nome"
+                placeholder="Nome"
                 onChange={(evt) => setName(evt.target.value)}
                 disabled={isLoading}
                 required
               />
             </div>
 
-            <div className='w3-left-align' id="formBasicEmail">
-              <label htmlFor='email'>Email</label>
+            <div className='w3-left-align w3-margin' id="formBasicEmail">
               <input
                 id='email'
                 className="w3-input w3-border w3-round"
                 type="email"
-                placeholder="Digite seu email"
+                placeholder="Email"
                 onChange={(evt) => setEmail(evt.target.value)}
                 disabled={isLoading}
                 required
               />
             </div>
 
-            <div className='w3-left-align' id="formBasicPassword">
-              <label htmlFor='senha' className="senha">Senha</label>
+            <div className='w3-left-align w3-margin' id="formBasicPassword">
               <input
                 id='senha'
                 onKeyUp={validation}
                 className="w3-input w3-border w3-round"
                 type="password"
-                placeholder="Confirme sua senha"
+                placeholder="Senha"
                 onChange={(evt) => setPassword(evt.target.value)}
                 disabled={isLoading}
               />
             </div>
-            {
-              !habilitarBotao && 
-              mensagem1 &&
-              <div className='w3-left-align'>
-                <p className='w3-text-red'>
-                  <span className='w3-text-red'>
-                    Senha inválida
-                  </span>
-                  <br />
-                </p>
-              </div>
-            }
-            {
-              habilitarBotao &&
-              <div className='w3-left-align'>
-                <p className='w3-text-green'>
-                  <span className='w3-text-green'>
-                    Senha válida!
-                  </span>
-                  <br />
-                </p>
-              </div>
-            }
-            {
-              mensagem1 && (
+            <div className='w3-left-align w3-margin' id="formBasicMensages">
+              {
+                !habilitarBotao &&
+                mensagem1 &&
+                <div className='w3-left-align'>
+                  <p className='w3-text-red'>
+                    <span className='w3-text-red'>
+                      Senha inválida
+                    </span>
+                    <br />
+                  </p>
+                </div>
+              }
+              {
+                habilitarBotao &&
+                <div className='w3-left-align'>
+                  <p className='w3-text-green'>
+                    <span className='w3-text-green'>
+                      Senha válida!
+                    </span>
+                    <br />
+                  </p>
+                </div>
+              }
+              {
+                mensagem1 && (
+                  <ul className='w3-text-red'>
+                    <li className='w3-left-align'>{mensagem1.msg}</li>
+                  </ul>
+                )
+              }
+              {
+                mensagem2 &&
                 <ul className='w3-text-red'>
-                  <li className='w3-left-align'>{mensagem1.msg}</li>
+                  <li className='w3-left-align'>{mensagem2.msg}</li>
                 </ul>
-              )
-            }
-            {
-              mensagem2 &&
-              <ul className='w3-text-red'>
-                <li className='w3-left-align'>{mensagem2.msg}</li>
-              </ul>
-            }
-            {
-              mensagem3 &&
-              <ul className='w3-text-red'>
-                <li className='w3-left-align'>{mensagem3.msg}</li>
-              </ul>
-            }
-            {
-              mensagem4 &&
-              <ul className='w3-text-red'>
-                <li className='w3-left-align'>{mensagem4.msg}</li>
-              </ul>
-            }
+              }
+              {
+                mensagem3 &&
+                <ul className='w3-text-red'>
+                  <li className='w3-left-align'>{mensagem3.msg}</li>
+                </ul>
+              }
+              {
+                mensagem4 &&
+                <ul className='w3-text-red'>
+                  <li className='w3-left-align'>{mensagem4.msg}</li>
+                </ul>
+              }
+            </div>
 
 
             <div className='w3-right-align w3-margin-top w3-hide-medium w3-hide-large'>
