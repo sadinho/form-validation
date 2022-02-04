@@ -148,10 +148,8 @@ export const Formulario = () => {
                   <li className={msgSucess.classColor}>{msgSucess.msg}</li>
                 </ul>
               }
-              {
-                habilitarBotao &&
 
-                <button className='
+              <button className='
                 w3-button
                 w3-gray
                 w3-round
@@ -159,11 +157,12 @@ export const Formulario = () => {
                 w3-border-black
                 w3-text-dark-grey
                 w3-margin-left'
-                  type="submit"
-                >
-                  Enviar
-                </button>
-              }
+                type="submit"
+                disabled={!habilitarBotao}
+              >
+                Enviar
+              </button>
+
             </div>
           </form>
         </div>
