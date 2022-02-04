@@ -24,7 +24,7 @@ Para rodar os testes unitarios
 
 ### Teste de Jornada
 
-instalar o plugin selenium no navegador e inportar e rodar o arquivo dentro da pasta testSelenium
+instalar o plugin selenium no navegador e importar e rodar o arquivo dentro da pasta testSelenium
 ### `npm run build`
 
 Compila o aplicativo para produção na pasta `build`.\
