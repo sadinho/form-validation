@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validationPassword } from '../PasswordValidation/index.js';
+import { validationPassword, mensagesRender, buttonRender } from '../PasswordValidation/index.js';
 import { requireValidate } from '../../Requisitions/PasswordValidateRequisitios/index.js';
 import '../../w3.css';
 
@@ -9,7 +9,7 @@ export const Formulario = () => {
   const [mensagem3, setMensagem3] = useState();
   const [mensagem4, setMensagem4] = useState();
   const [msgSucess, setMsgSucess] = useState();
-  const [habilitarBotao, setHabilitarBotao] = useState(false);
+  const [ buttonHability, setButtonHability] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +23,7 @@ export const Formulario = () => {
       setMensagem3,
       setMensagem4,
     );
-    setHabilitarBotao(buttonHability);
+    setButtonHability(buttonHability);
   }
 
   const handleSubmit = async (event) => {
@@ -56,14 +56,26 @@ export const Formulario = () => {
       setIsLoading(false);
     }
   }
+  const renderMenssage = () => {
+    return mensagesRender(
+      mensagem1,
+      mensagem2,
+      mensagem3,
+      mensagem4,
+      buttonHability,
+    );
+  }
 
+  const renderButton = () => {
+    return buttonRender(msgSucess, buttonHability, isLoading);
+  }
 
   return (
     <div className='w3-col m12 l12 s12 App-padding-left-right'>
       <div className="w3-row">
         <div className="w3-col">
           <header className='w3-left-align w3-margin-left w3-margin'>
-            <h1 className='w3-left-align w3-margin'>Valide sua senha</h1>
+            <h2 className='w3-left-align w3-margin'>Valide sua senha</h2>
           </header>
           <form className="w3-container" onSubmit={handleSubmit}>
             <div className="w3-left-align w3-margin" id="formBasicName">
@@ -101,103 +113,9 @@ export const Formulario = () => {
                 disabled={isLoading}
               />
             </div>
-            <div className='w3-left-align w3-margin' id="formBasicMensages">
-              {
-                !habilitarBotao &&
-                mensagem1 &&
-                <div className='w3-left-align'>
-                  <p className='w3-text-red'>
-                    <span className='w3-text-red'>
-                      Senha inválida
-                    </span>
-                    <br />
-                  </p>
-                </div>
-              }
-              {
-                habilitarBotao &&
-                <div className='w3-left-align'>
-                  <p className='w3-text-green'>
-                    <span className='w3-text-green'>
-                      Senha válida!
-                    </span>
-                    <br />
-                  </p>
-                </div>
-              }
-              {
-                mensagem1 && (
-                  <ul className='w3-text-red'>
-                    <li className='w3-left-align'>{mensagem1.msg}</li>
-                  </ul>
-                )
-              }
-              {
-                mensagem2 &&
-                <ul className='w3-text-red'>
-                  <li className='w3-left-align'>{mensagem2.msg}</li>
-                </ul>
-              }
-              {
-                mensagem3 &&
-                <ul className='w3-text-red'>
-                  <li className='w3-left-align'>{mensagem3.msg}</li>
-                </ul>
-              }
-              {
-                mensagem4 &&
-                <ul className='w3-text-red'>
-                  <li className='w3-left-align'>{mensagem4.msg}</li>
-                </ul>
-              }
-            </div>
+            {renderMenssage()}
 
-
-            <div className='w3-right-align w3-margin-top w3-hide-medium w3-hide-large'>
-              {
-                msgSucess && <ul>
-                  <li className={msgSucess.classColor}>{msgSucess.msg}</li>
-                </ul>
-              }
-
-              <button className='
-                w3-button
-                w3-gray
-                w3-round
-                w3-border
-                w3-border-black
-                w3-text-dark-grey
-                w3-col
-                w3-display-bottommiddle'
-                type="submit"
-                disabled={!habilitarBotao || isLoading}
-              >
-                Enviar
-              </button>
-
-            </div>
-            <div className='w3-right-align w3-margin-top w3-hide-small'>
-              {
-                msgSucess && <ul className='w3-col l9 m9 s9'>
-                  <li className={msgSucess.classColor}>{msgSucess.msg}</li>
-                </ul>
-              }
-
-              <button className='
-                w3-button
-                w3-gray
-                w3-round
-                w3-border
-                w3-border-black
-                w3-text-dark-grey
-                w3-margin-left'
-                type="submit"
-                disabled={!habilitarBotao || isLoading}
-              >
-                Enviar
-              </button>
-
-            </div>
+            {renderButton()}
           </form>
         </div>
       </div>

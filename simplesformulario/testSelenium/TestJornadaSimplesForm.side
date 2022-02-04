@@ -1,0 +1,112 @@
+{
+  "id": "1c1a1739-90d8-49c1-a497-d93f9b730f14",
+  "version": "2.0",
+  "name": "TestJornadaSimplesForm",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "73f837fc-91d8-4e2a-9b01-008345a5aff2",
+    "name": "JonadaSucess",
+    "commands": [{
+      "id": "6257f00f-6c05-400e-a67d-e1adbb48b3d4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b6c28dd-0ced-4cb4-99f8-e0f33d0ae1f1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1355x712",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76a2bebf-7258-4ff9-846f-aa3bffce08f0",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//div[@id='formBasicName']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b491f5ba-0348-4e78-840f-371357dc2d63",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//div[@id='formBasicName']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "sade"
+    }, {
+      "id": "05fc765d-98de-4391-9265-9fb1e670f021",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='formBasicEmail']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "drdim@sade.com"
+    }, {
+      "id": "8ec63376-5eab-445f-85d7-84758cc4056a",
+      "comment": "",
+      "command": "click",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//div[@id='formBasicPassword']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44bb9cbd-117a-4d69-a86f-49ba5e2a8168",
+      "comment": "",
+      "command": "type",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//div[@id='formBasicPassword']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "222222"
+    }, {
+      "id": "553c4af5-ffa1-4a37-990d-d400193328c9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-hide-small > .w3-button",
+      "targets": [
+        ["css=.w3-hide-small > .w3-button", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/form/div[6]/button", "xpath:idRelative"],
+        ["xpath=//div[6]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c30e4ea8-e5f1-4340-99e4-7fb8817e3a88",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["73f837fc-91d8-4e2a-9b01-008345a5aff2"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}

@@ -1,3 +1,8 @@
+# Descrição
+
+Esse é um simples formulario de validação de senha para quatro casos especificos
+foi aplicado destruturação de string em array para aplicação de estrutura de dados para verificação de predecessores e sucessores
+alem de ordem crecente e decrecente, restrição de numero maximo e minimo e verificação de tamanho de array.
 # instalar dependencias
 
 yarn install ou npm install
@@ -17,6 +22,9 @@ Você também pode ver erros de lint no console.
 ### `npm test`
 Para rodar os testes unitarios
 
+### Teste de Jornada
+
+instalar o plugin selenium no navegador e inportar e rodar o arquivo dentro da pasta testSelenium
 ### `npm run build`
 
 Compila o aplicativo para produção na pasta `build`.\
